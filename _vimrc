@@ -20,7 +20,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 "Font == consolas
-set guifont="consolas 20"
+set guifont=consolas:h16
 "Json formatter
 nmap =j :%!python -m json.tool<CR> 
 "Remove search highlights
@@ -63,6 +63,9 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'henrik/vim-indexed-search'
 "Plug 'vim-scripts/Conque-Shell'
 "Plug 'airblade/vim-gitgutter' " ENABLE WHEN MOVING TO GIT
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 colorscheme gotham256
@@ -100,3 +103,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 " Set .tpl to .xml syntax highlighting
 au BufRead,BufNewFile *.tpl set filetype=xml
+
+" Let delimate expand on new line
+let delimitMate_expand_cr = 1

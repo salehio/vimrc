@@ -20,7 +20,9 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 "Font == consolas
-set guifont=consolas:h16
+set guifont=consolas
+"Font for surface
+"set guifont=consolas:h16
 "Json formatter
 nmap =j :%!python -m json.tool<CR> 
 "Remove search highlights
@@ -65,7 +67,7 @@ Plug 'henrik/vim-indexed-search'
 "Plug 'airblade/vim-gitgutter' " ENABLE WHEN MOVING TO GIT
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 colorscheme gotham256

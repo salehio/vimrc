@@ -23,8 +23,15 @@ set guioptions-=L  "remove left-hand scroll bar
 set guifont=consolas
 "Font for surface
 "set guifont=consolas:h16
-"Json formatter
-nmap =j :%!python -m json.tool<CR> 
+"" Full json formatting
+nmap =j :%!python -m json.tool<CR>
+"" Format from IE output
+nmap =p ggdG"+p=jggVG=
+"" Format from Unit test output. Copy the whole unit test output from Unit
+"" Test window. Json only.
+nmap =t ggdG"+Pgg0vf<xv%f<x%f>vGx:%s///g
+"Format entire file
+nmap =a ggVG=
 "Remove search highlights
 nmap \q :noh<CR>
 "YankRing window
@@ -40,6 +47,9 @@ let g:multi_cursor_next_key='<C-j>'
 let g:multi_cursor_prev_key='<C-k>'
 let g:multi_cursor_skip_key='<C-X>'
 let g:multi_cursor_quit_key='<Esc>'
+"NerdTree Toggle (file browser)
+map <F4> :NERDTreeToggle<CR>
+let NERDTreeDirArrows=0
 
 " vim-plug
 call plug#begin('$HOME/_vim/plugged')
@@ -68,6 +78,8 @@ Plug 'henrik/vim-indexed-search'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 colorscheme gotham256
